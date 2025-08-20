@@ -34,3 +34,13 @@
  │  You print response.content    │
  │   → Answer: Paris              │
  └───────────────────────────────┘
+
+IN Short Paragraph : 
+Your script takes a question as input, 
+formats it using a PromptTemplate, 
+then sends that formatted text to Google’s Gemini LLM (gemini-2.5-flash). 
+The model processes the prompt and generates an answer, 
+which LangChain wraps inside an AIMessage object. 
+Finally, you extract and print just the text part (response.content).
+
+So it’s basically a pipeline: Question → Prompt → Gemini → Answer.
