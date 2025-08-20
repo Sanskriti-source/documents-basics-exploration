@@ -1,0 +1,161 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 3115 >>
+stream
+BT
+/F1 11 Tf
+50 792 Td
+14 TL
+(Git  GitHub: Full Workflow Cheat Sheet \(Sanskriti\)) Tj
+T*
+(Last updated: Aug 20, 2025) Tj
+T*
+T*
+(Git  GitHub: Full Workflow Cheat Sheet \(Sanskriti\)) Tj
+T*
+(Last updated: Aug 20, 2025) Tj
+T*
+T*
+(USE CASE) Tj
+T*
+(- Push a local folder \(with PDFs, .py, etc.\) to an existing GitHub repo.) Tj
+T*
+(- Handles the remote contains work you do not have locally error safely.) Tj
+T*
+T*
+(STEP 1  Initialize Git \(only if the folder isnt a repo yet\)) Tj
+T*
+(    git init) Tj
+T*
+T*
+(STEP 2  Set your identity \(one-time per machine; use your GitHub email\)) Tj
+T*
+(    git config --global user.name "Sanskriti") Tj
+T*
+(    git config --global user.email "YOUR_GITHUB_EMAIL@example.com") Tj
+T*
+(  \(Optional, only for this repo\)) Tj
+T*
+(    git config user.name "Sanskriti") Tj
+T*
+(    git config user.email "YOUR_GITHUB_EMAIL@example.com") Tj
+T*
+T*
+(STEP 3  Add & Commit your files) Tj
+T*
+(    git add .) Tj
+T*
+(    git commit -m "Initial commit") Tj
+T*
+T*
+(STEP 4  Use GitHubs default branch name) Tj
+T*
+(    git branch -M main) Tj
+T*
+T*
+(STEP 5  Connect to your GitHub repo) Tj
+T*
+(    git remote add origin https://github.com/Sanskriti-source/documents-basics-exploration.git) Tj
+T*
+(  If you see remote origin already exists, run:) Tj
+T*
+(    git remote set-url origin https://github.com/Sanskriti-source/documents-basics-exploration.git) Tj
+T*
+T*
+(STEP 6  Sync with GitHub first \(important if the GitHub repo already has files like README\)) Tj
+T*
+(    git pull origin main --allow-unrelated-histories) Tj
+T*
+(  \(Skip editor by autoadding a message\)) Tj
+T*
+(    git pull origin main --allow-unrelated-histories -m "Merge remote with local") Tj
+T*
+T*
+(STEP 7  Push your code) Tj
+T*
+(    git push origin main) Tj
+T*
+T*
+(IF YOU GET ERRORS) Tj
+T*
+T*
+(A\) rejected: fetch first / remote contains work) Tj
+T*
+(    git fetch origin) Tj
+T*
+(    git pull origin main --allow-unrelated-histories) Tj
+T*
+(    git push origin main) Tj
+T*
+T*
+(B\) src refspec main/master does not match any \(you havent committed yet\)) Tj
+T*
+(    git add .) Tj
+T*
+(    git commit -m "Initial commit") Tj
+T*
+(    git push origin main) Tj
+T*
+T*
+(C\) Please complete authentication in your browser) Tj
+T*
+(  - Log into GitHub in your browser when prompted, then push again.) Tj
+T*
+T*
+(D\) Force push \(OVERWRITES GitHub  use only if you are sure\)) Tj
+T*
+(    git push origin main --force) Tj
+T*
+T*
+(USEFUL CHECKS) Tj
+T*
+(    git status) Tj
+T*
+(    git branch) Tj
+T*
+(    git remote -v) Tj
+T*
+(    git log --oneline --graph --decorate --all) Tj
+T*
+T*
+(ONE-LINER \(safe, merge when needed\)) Tj
+T*
+(    git init && git add . && git commit -m "Initial commit" && git branch -M main && git remote add ) Tj
+T*
+(origin https://github.com/Sanskriti-source/documents-basics-exploration.git 2> NUL || git remote ) Tj
+T*
+(set-url origin https://github.com/Sanskriti-source/documents-basics-exploration.git && git pull ) Tj
+T*
+(origin main --allow-unrelated-histories -m "Merge remote with local" && git push origin main) Tj
+T*
+T*
+(Tip: If you prefer master instead of main, substitute the branch name consistently.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3478
+%%EOF

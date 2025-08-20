@@ -1,0 +1,65 @@
+Git → GitHub: Full Workflow Cheat Sheet (Sanskriti)
+Last updated: Aug 20, 2025
+
+USE CASE
+- Push a local folder (with PDFs, .py, etc.) to an existing GitHub repo.
+- Handles the “remote contains work you do not have locally” error safely.
+
+STEP 1 — Initialize Git (only if the folder isn’t a repo yet)
+    git init
+
+STEP 2 — Set your identity (one-time per machine; use your GitHub email)
+    git config --global user.name "Sanskriti"
+    git config --global user.email "YOUR_GITHUB_EMAIL@example.com"
+  (Optional, only for this repo)
+    git config user.name "Sanskriti"
+    git config user.email "YOUR_GITHUB_EMAIL@example.com"
+
+STEP 3 — Add & Commit your files
+    git add .
+    git commit -m "Initial commit"
+
+STEP 4 — Use GitHub’s default branch name
+    git branch -M main
+
+STEP 5 — Connect to your GitHub repo
+    git remote add origin https://github.com/Sanskriti-source/documents-basics-exploration.git
+  If you see “remote origin already exists”, run:
+    git remote set-url origin https://github.com/Sanskriti-source/documents-basics-exploration.git
+
+STEP 6 — Sync with GitHub first (important if the GitHub repo already has files like README)
+    git pull origin main --allow-unrelated-histories
+  (Skip editor by auto‑adding a message)
+    git pull origin main --allow-unrelated-histories -m "Merge remote with local"
+
+STEP 7 — Push your code
+    git push origin main
+
+IF YOU GET ERRORS
+
+A) “rejected: fetch first / remote contains work”
+    git fetch origin
+    git pull origin main --allow-unrelated-histories
+    git push origin main
+
+B) “src refspec main/master does not match any” (you haven’t committed yet)
+    git add .
+    git commit -m "Initial commit"
+    git push origin main
+
+C) “Please complete authentication in your browser…”
+  - Log into GitHub in your browser when prompted, then push again.
+
+D) Force push (OVERWRITES GitHub — use only if you are sure)
+    git push origin main --force
+
+USEFUL CHECKS
+    git status
+    git branch
+    git remote -v
+    git log --oneline --graph --decorate --all
+
+ONE-LINER (safe, merge when needed)
+    git init && git add . && git commit -m "Initial commit" && git branch -M main && git remote add origin https://github.com/Sanskriti-source/documents-basics-exploration.git 2> NUL || git remote set-url origin https://github.com/Sanskriti-source/documents-basics-exploration.git && git pull origin main --allow-unrelated-histories -m "Merge remote with local" && git push origin main
+
+Tip: If you prefer ‘master’ instead of ‘main’, substitute the branch name consistently.
