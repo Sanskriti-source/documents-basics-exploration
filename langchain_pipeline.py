@@ -3,7 +3,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 # 1. Initialize the LLM
-llm = OpenAI(temperature=0.7) # Replace with your preferred LLM and API key setup
+llm = OpenAI(temperature=0.7) 
+# Replace with your preferred LLM and API key setup
 
 # 2. Define a Prompt Template
 prompt = PromptTemplate(
