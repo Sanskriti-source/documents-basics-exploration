@@ -1,5 +1,5 @@
 Explanation of the Example:
-
+by sk
 Initialize the LLM:
 This step instantiates a Language Model, in this case, OpenAI. You would configure it with your API key or other necessary parameters.
 
