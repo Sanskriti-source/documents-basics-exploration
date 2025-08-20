@@ -1,0 +1,36 @@
+ ┌───────────────────────────────┐
+ │   Your Input Question          │
+ │   "What is the capital of      │
+ │    France?"                    │
+ └───────────────┬────────────────┘
+                 │
+                 ▼
+ ┌───────────────────────────────┐
+ │  PromptTemplate                │
+ │  "Answer the following         │
+ │   question: {question}"        │
+ │   → fills with →               │
+ │  "Answer the following         │
+ │   question: What is the        │
+ │   capital of France?"          │
+ └───────────────┬────────────────┘
+                 │
+                 ▼
+ ┌───────────────────────────────┐
+ │  Gemini LLM (gemini-2.5-flash) │
+ │   Processes the prompt         │
+ │   Generates answer             │
+ └───────────────┬────────────────┘
+                 │
+                 ▼
+ ┌───────────────────────────────┐
+ │  AIMessage (LangChain object)  │
+ │   content = "Paris"            │
+ │   metadata = usage, tokens, .. │
+ └───────────────────────────────┘
+                 │
+                 ▼
+ ┌───────────────────────────────┐
+ │  You print response.content    │
+ │   → Answer: Paris              │
+ └───────────────────────────────┘
