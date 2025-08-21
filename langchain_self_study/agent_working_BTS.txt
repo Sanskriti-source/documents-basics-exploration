@@ -1,0 +1,4 @@
+
+# My Learning - deductions 
+means like user putting this request request sent to gemini then if it has knowledge it will ans or else it will trigger or invoke these tool calls (idk from where does this display from ) but these tool calls the tavily which searches just like how me as a human search a particular topic in google or copiolet about weather conditions. Here it automatically searches all it's own without we needing to train LLM on this dataset and then it flashes this response
+
