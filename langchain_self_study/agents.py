@@ -6,6 +6,7 @@ from langgraph.prebuilt import create_react_agent
 
 # Create the agent
 # MemorySaver is used to store the state of the agent
+# this stores the prev conversation 
 memory = MemorySaver()
 # init_chat_model is used to create a chat model
 ## instead of anthropic:claude-3-5-sonnet-latest, we use gemini-2.5-flash
@@ -31,6 +32,17 @@ input_message = {
 
 # Instead of running all at once, the agent is streaming its reasoning process step by step.
 #Each step contains updated conversation messages (human, AI thoughts, tool calls, tool outputs, etc.).
+for step in agent_executor.stream(
+    {"messages": [input_message]}, config, stream_mode="values"
+):
+    step["messages"][-1].pretty_print()
+
+# here this will give the output with the recent result + prev saved result from memory = MemorySaver()
+input_message = {
+    "role": "user",
+    "content": "What's the weather where I live?",
+}
+
 for step in agent_executor.stream(
     {"messages": [input_message]}, config, stream_mode="values"
 ):
