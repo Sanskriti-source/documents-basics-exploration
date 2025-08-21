@@ -1,9 +1,50 @@
 # Agent Working — Behind The Scenes (BTS)
 
 A concise, developer-friendly explainer of how an LLM (e.g., Gemini) decides when to use tools (like TavilySearch), and how a ReAct agent automates the loop in LangChain/LangGraph.
+---
+# My Learnings - Deductions
+# save as generate_llm_vs_agentic_md.py
+content = """# LLM vs Agentic Framework (LangChain)
+
+A quick comparison to understand the difference between a **pure LLM** and an **Agentic AI system** (LLM + tools + framework).
 
 ---
 
+## 🔎 Core Difference
+
+- **LLM alone = advisor** (tells you what to do).  
+- **Agentic AI = executor** (does it for you).  
+
+---
+
+## 🆚 Side-by-Side Comparison
+
+| Aspect | Pure LLM | Agentic Framework (LLMs + Agents + Tools) |
+|--------|----------|-------------------------------------------|
+| **Workflow** | Input → Think → Respond (static) | Input → Reason → Act (tool call) → Observe → Final Answer |
+| **Nature of Output** | Theoretical / Instructions | Actionable / Executed result |
+| **Example (Weather in SF?)** | “Open Google and check SF weather.” | *Actually queries API* → “It’s 28°C in SF now.” |
+| **Decision Process** | One-shot reasoning | Step-by-step reasoning + external actions |
+| **Capabilities** | Text generation only | Text + live search, DB queries, API calls, code execution |
+| **User Effort** | User must execute instructions manually | Agent executes automatically |
+| **Best For** | Summaries, explanations, brainstorming | Automation, live info, integrated workflows |
+
+---
+
+## 🧭 Short Recap
+
+- **LLMs just give theory:** they output what *should* be done.  
+- **Agentic AI does it directly:** by using **tools + reasoning loop**, it completes the task end-to-end.  
+"""
+
+out_path = "LLM_vs_Agentic.md"
+with open(out_path, "w", encoding="utf-8") as f:
+    f.write(content)
+print(f"Wrote {out_path}")
+
+---
+# In Detail
+---
 ## 🔎 TL;DR
 
 - **LLM has two modes:** 
