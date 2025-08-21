@@ -1,4 +1,4 @@
-# documents-basics-exploration- SELF TAUGHT TOPICS 
+# Documents Basics Exploration - SELF TAUGHT TOPICS 
 ---
 ✅ LangChain basics – what it is, how it integrates with LLMs <br>
 ✅ Gemini with LangChain – using Google’s LLM via LangChain <br>
