@@ -9,7 +9,7 @@
 ✅ Code practice – creating an agent with a tool (Tavily search) <br>
 ✅ Virtual Machine basics – architecture + why used in AI setups <br>
 ---
-##⚡ What you might still be slightly missing (to get a complete “foundation” picture):
+## ⚡ What you might still be slightly missing (to get a complete “foundation” picture):
 
 Memory in LangChain → how agents remember past interactions
 
