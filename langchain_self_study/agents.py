@@ -4,6 +4,9 @@ from langchain_tavily import TavilySearch
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 
+#LLM = brain (thinks, generates text).
+#LangChain = skeleton/framework that makes the brain act with tools, memory, agents.
+
 # Create the agent
 # MemorySaver is used to store the state of the agent
 # this stores the prev conversation 
