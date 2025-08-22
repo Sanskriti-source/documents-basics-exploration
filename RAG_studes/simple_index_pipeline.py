@@ -55,7 +55,7 @@ class State(TypedDict):
     context: List[Document]
     answer: str
 
-
+# RETRIVAL
 # Define application steps
 def retrieve(state: State):
     # it retrieves the content having similarity score approx equal to the user's query 
@@ -65,7 +65,7 @@ def retrieve(state: State):
 from langchain_google_genai import ChatGoogleGenerativeAI
 llm= ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key="AIzaSyAl7GrG_qYTwKrExSdWZJniMlbNj_8LHfc")
 
-
+# AUGMENTATION
 def generate(state: State):
     docs_content = "\n\n".join(doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": state["question"], "context": docs_content})
@@ -73,7 +73,7 @@ def generate(state: State):
     return {"answer": response.content}
 
 
-
+# GENERATION
 # Compile application and test
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
